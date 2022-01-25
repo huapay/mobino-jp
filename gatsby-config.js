@@ -32,6 +32,18 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-source-microcms`,
+      options: {
+        apiKey: process.env.MICROCMS_API_KEY,
+        serviceId: `mobino`,
+        apis: [
+          {
+            endpoint: `articles`,
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
   ],
 };
